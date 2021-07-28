@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme formFilm 'bootstrap_5_layout.html.twig' %}
+
+{% block body %}
+
+    {{ form_start(formFilm) }}
+        {{ form_row(formFilm.name) }}
+        {{ form_row(formFilm.sumup) }}
+        {{ form_row(formFilm.director) }}
+        {{ form_row(formFilm.releaseDate) }}
+
+    <button type="submit" class="btn btn-success">
+        {% if edition %}
+        Editer
+        {% else %}
+        Enregistrer
+        {% endif %}
+    </button>
+
+    {{ form_end(formFilm) }}
+
+{% endblock %}
